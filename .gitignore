@@ -1,0 +1,55 @@
+# Exclure le dossier des dépendances Node.js
+node_modules/
+/.pnp
+.pnp.js
+
+# Exclure les fichiers de sauvegarde
+*~
+*.bak
+
+# Exclure les fichiers de configuration
+.env
+.config
+
+# Exclure les fichiers de logs
+log/
+logs/
+
+# Exclure les fichiers de cache
+.cache/
+
+# Exclure les fichiers de compilation
+*.class
+
+# Exclure les fichiers de configuration système
+.DS_Store
+Thumbs.db
+
+# Exclure les fichiers de sortie de build
+build/
+dist/
+
+# Exclure les fichiers de documentation générée
+*.pdf
+
+# Exclure les fichiers de configuration de l'IDE
+.idea/
+.vscode/
+
+# Exclure les fichiers de journalisation de tests
+test.log
+test-results.xml
+/coverage
+
+# Exclure les fichiers de configuration de serveur
+.htaccess
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
