@@ -19,7 +19,7 @@ export const registerController = async function (req, res) {
       impressions: Math.floor(Math.random() * 10000),
     });
     const savedUser = await newUser.save();
-    const formattedUser = formatUser(savedUser);
+    const formattedUser = savedUser.firstName;
     console.log(passwordHash, location);
     res.status(201).json(formattedUser);
   } catch (error) {
