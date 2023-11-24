@@ -1,13 +1,17 @@
 import Post from "../models/post.js";
+import User from "../models/user.js";
 
 export const AddComment = async function (req, res) {
   try {
     const { postId } = req.params;
     const { userId, comment } = req.body;
     const post = await Post.findById(postId);
+    const { firstName, lastName } = await User.findById(userId);
     console.log(post.comments);
     post.comments.push({
       commentId: Date.now(),
+      firstName,
+      lastName,
       userId,
       comment,
     });

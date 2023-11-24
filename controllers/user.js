@@ -10,6 +10,27 @@ export const getUser = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+export const getUsers = async (req, res) => {
+  try {
+    const usersArray = req.body;
+    console.log(`b`, usersArray);
+    const userPromises = usersArray.map((id) => {
+      return User.findById(id).lean();
+    });
+
+    const usersData = await Promise.all(userPromises);
+
+    usersData.forEach((user) => {
+      if (user) {
+        delete user.password;
+      }
+    });
+
+    res.status(200).json(usersData);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
 
 export const getFriendsUser = async (req, res) => {
   try {
